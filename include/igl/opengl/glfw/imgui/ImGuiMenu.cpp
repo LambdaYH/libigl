@@ -13,6 +13,7 @@
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
 #include <imgui_fonts_droid_sans.h>
+#include <imgui_fonts_SourceHanSans.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 ////////////////////////////////////////////////////////////////////////////////
@@ -55,9 +56,15 @@ IGL_INLINE void ImGuiMenu::reload_font(int font_size)
   hidpi_scaling_ = hidpi_scaling();
   pixel_ratio_ = pixel_ratio();
   ImGuiIO& io = ImGui::GetIO();
+  ImFontConfig config_words;
+  config_words.OversampleV = 1;
+  config_words.OversampleH = 1;
   io.Fonts->Clear();
-  io.Fonts->AddFontFromMemoryCompressedTTF(droid_sans_compressed_data,
-    droid_sans_compressed_size, font_size * hidpi_scaling_);
+  io.Fonts->AddFontFromMemoryCompressedTTF(SourceHanSans_compressed_data,
+                                           SourceHanSans_compressed_size,
+                                           font_size * hidpi_scaling_,
+                                           &config_words,
+                                           io.Fonts->GetGlyphRangesChineseFull());
   io.FontGlobalScale = 1.0 / pixel_ratio_;
 }
 

@@ -103,7 +103,7 @@ endfunction()
 function(igl_download_imgui)
 	igl_download_project(imgui
 		GIT_REPOSITORY https://github.com/ocornut/imgui.git
-		GIT_TAG        5b1a70aa2dafcd589843deb3bd7e97473b47d3ec # 1.85 + patch
+		GIT_TAG        eb02dcf87f1a62afc0bc4a5a05e71dc4e6333cde # update by cinte
 		${LIBIGL_BRANCH_OPTIONS}
 	)
 	igl_download_project(libigl-imgui

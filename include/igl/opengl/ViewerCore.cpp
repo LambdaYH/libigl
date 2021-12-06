@@ -125,6 +125,7 @@ IGL_INLINE void igl::opengl::ViewerCore::draw(
 
   // Initialize uniform
   glViewport(viewport(0), viewport(1), viewport(2), viewport(3));
+  // glViewport(viewport(0) + viewport(2) / 5, viewport(1), viewport(2) / 5 * 4, viewport(3));
 
   if(update_matrices)
   {

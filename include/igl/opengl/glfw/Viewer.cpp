@@ -49,6 +49,8 @@ static igl::opengl::glfw::Viewer * __viewer;
 static double highdpi = 1;
 static double scroll_x = 0;
 static double scroll_y = 0;
+static int windowWidth_ret = 0;
+static int windowHeight_ret = 0;
 
 static void glfw_mouse_press(GLFWwindow* window, int button, int action, int modifier)
 {
@@ -93,9 +95,7 @@ static void glfw_window_size(GLFWwindow* window, int width, int height)
 {
   int w = width*highdpi;
   int h = height*highdpi;
-
   __viewer->post_resize(w, h);
-
 }
 
 static void glfw_mouse_move(GLFWwindow* window, double x, double y)
@@ -965,6 +965,12 @@ namespace glfw
     {
       callback_post_resize(*this, w, h);
     }
+  }
+
+  IGL_INLINE std::pair<int, int> Viewer::get_glfwWindowSize()
+  {
+      glfwGetWindowSize(window, &windowWidth_ret, &windowHeight_ret);
+      return {windowWidth_ret, windowHeight_ret};
   }
 
   IGL_INLINE void Viewer::snap_to_canonical_quaternion()

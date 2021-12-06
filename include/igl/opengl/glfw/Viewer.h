@@ -24,6 +24,7 @@
 #include <vector>
 #include <string>
 #include <cstdint>
+#include <utility>
 
 #define IGL_MOD_SHIFT           0x0001
 #define IGL_MOD_CONTROL         0x0002
@@ -75,6 +76,7 @@ namespace glfw
     // OpenGL context resize
     IGL_INLINE void resize(int w,int h); // explicitly set window size
     IGL_INLINE void post_resize(int w,int h); // external resize due to user interaction
+    IGL_INLINE std::pair<int, int> get_glfwWindowSize(); // get glfw window size
     // Helper functions
     IGL_INLINE void snap_to_canonical_quaternion();
     IGL_INLINE void open_dialog_load_mesh();
