@@ -107,8 +107,8 @@ function(igl_download_imgui)
 		${LIBIGL_BRANCH_OPTIONS}
 	)
 	igl_download_project(libigl-imgui
-		GIT_REPOSITORY https://github.com/libigl/libigl-imgui.git
-		GIT_TAG        7e1053e750b0f4c129b046f4e455243cb7f804f3
+		GIT_REPOSITORY https://github.com/LambdaYH/libigl-imgui.git
+		GIT_TAG        ae395fc51e5d3276e4444ccb0df464d536a402ae
 	)
 endfunction()
 
