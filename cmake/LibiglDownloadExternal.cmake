@@ -108,7 +108,7 @@ function(igl_download_imgui)
 	)
 	igl_download_project(libigl-imgui
 		GIT_REPOSITORY https://github.com/LambdaYH/libigl-imgui.git
-		GIT_TAG        ae395fc51e5d3276e4444ccb0df464d536a402ae
+		GIT_TAG        0abb63568fd0528e69de3a21ed036976dc8b078c
 	)
 endfunction()
 
