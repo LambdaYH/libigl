@@ -703,6 +703,7 @@ namespace glfw
 
       case MouseButton::Middle:
         mouse_mode = MouseMode::MiddleCustom;
+        break;
 
       default:
         mouse_mode = MouseMode::None;
