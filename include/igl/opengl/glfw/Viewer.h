@@ -45,7 +45,7 @@ namespace glfw
   public:
     // UI Enumerations
     enum class MouseButton {Left, Middle, Right};
-    enum class MouseMode { None, Rotation, Zoom, Pan, Translation} mouse_mode;
+    enum class MouseMode { None, Rotation, Zoom, Pan, Translation, MiddleCustom} mouse_mode;
     IGL_INLINE int launch(bool resizable = true, bool fullscreen = false, const std::string &name = "libigl viewer", int width = 0, int height = 0);
     IGL_INLINE int launch_init(bool resizable = true, bool fullscreen = false, const std::string &name = "libigl viewer", int width = 0, int height = 0);
     IGL_INLINE bool launch_rendering(bool loop = true);
@@ -212,6 +212,8 @@ public:
     // THESE SHOULD BE DEPRECATED:
     std::function<bool(Viewer& viewer, unsigned int key, int modifiers)> callback_key_down;
     std::function<bool(Viewer& viewer, unsigned int key, int modifiers)> callback_key_up;
+    // custom callback function
+    std::function<void(Viewer& viewer)> callback_mouse_press_middleButton;
     // Pointers to per-callback data
     void* callback_init_data;
     void* callback_pre_draw_data;

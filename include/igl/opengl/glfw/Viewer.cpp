@@ -339,6 +339,8 @@ namespace glfw
     callback_mouse_scroll = nullptr;
     callback_key_down     = nullptr;
     callback_key_up       = nullptr;
+    // custom
+    callback_mouse_press_middleButton = nullptr;
 
     callback_init_data          = nullptr;
     callback_pre_draw_data      = nullptr;
@@ -699,6 +701,9 @@ namespace glfw
         mouse_mode = MouseMode::Translation;
         break;
 
+      case MouseButton::Middle:
+        mouse_mode = MouseMode::MiddleCustom;
+
       default:
         mouse_mode = MouseMode::None;
         break;
@@ -808,7 +813,12 @@ namespace glfw
           down_mouse_y = mouse_y;
           break;
         }
-
+        case MouseMode::MiddleCustom:
+        {
+          if(callback_mouse_press_middleButton)
+            callback_mouse_press_middleButton(*this);
+          break;
+        }
         default:
           break;
       }
