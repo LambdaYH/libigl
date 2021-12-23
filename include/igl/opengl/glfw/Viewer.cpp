@@ -817,7 +817,7 @@ namespace glfw
         case MouseMode::MiddleCustom:
         {
           if(callback_mouse_press_middleButton)
-            callback_mouse_press_middleButton(*this);
+            callback_mouse_press_middleButton(*this, mouse_x, mouse_y);
           break;
         }
         default:
