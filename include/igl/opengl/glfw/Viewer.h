@@ -213,7 +213,7 @@ public:
     std::function<bool(Viewer& viewer, unsigned int key, int modifiers)> callback_key_down;
     std::function<bool(Viewer& viewer, unsigned int key, int modifiers)> callback_key_up;
     // custom callback function
-    std::function<void(Viewer& viewer, int mouse_x, int mouse_y)> callback_mouse_press_middleButton;
+    std::function<void(Viewer& viewer, int mouse_x, int mouse_y, const int down_mouse_x, const int down_mouse_y)> callback_mouse_press_middleButton;
     // Pointers to per-callback data
     void* callback_init_data;
     void* callback_pre_draw_data;
