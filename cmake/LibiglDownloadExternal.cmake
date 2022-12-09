@@ -64,7 +64,7 @@ function(igl_download_cork)
 endfunction()
 
 ## Eigen
-set(LIBIGL_EIGEN_VERSION 3.3.7 CACHE STRING "Default version of Eigen used by libigl.")
+set(LIBIGL_EIGEN_VERSION 3.4.0 CACHE STRING "Default version of Eigen used by libigl.")
 function(igl_download_eigen)
 	igl_download_project(eigen
 		GIT_REPOSITORY https://gitlab.com/libeigen/eigen.git
