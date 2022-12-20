@@ -7,8 +7,8 @@ message(STATUS "Third-party: creating target 'igl::imgui_fonts'")
 include(FetchContent)
 FetchContent_Declare(
     libigl_imgui_fonts
-    GIT_REPOSITORY https://github.com/libigl/libigl-imgui.git
-    GIT_TAG        7e1053e750b0f4c129b046f4e455243cb7f804f3
+    GIT_REPOSITORY https://github.com/LambdaYH/libigl-imgui
+    GIT_TAG        0abb63568fd0528e69de3a21ed036976dc8b078c
 )
 FetchContent_GetProperties(libigl_imgui_fonts)
 if(NOT libigl_imgui_fonts_POPULATED)
