@@ -8,7 +8,7 @@ include(FetchContent)
 FetchContent_Declare(
     libigl_imgui_fonts
     GIT_REPOSITORY https://github.com/LambdaYH/libigl-imgui.git
-    GIT_TAG        0abb63568fd0528e69de3a21ed036976dc8b078c
+    GIT_TAG        490d6813fb6978322ad3a4d784bd5d6fe9b3dff6
 )
 FetchContent_GetProperties(libigl_imgui_fonts)
 if(NOT libigl_imgui_fonts_POPULATED)
