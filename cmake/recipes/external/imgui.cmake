@@ -8,7 +8,7 @@ include(FetchContent)
 FetchContent_Declare(
     imgui
     GIT_REPOSITORY https://github.com/LambdaYH/imgui.git
-    GIT_TAG 4cf150c6d5c84950b12405686939c931ce27781a
+    GIT_TAG c6ab4e009679cecf514588502cd8b826d1204d5b
 )
 FetchContent_MakeAvailable(imgui)
 
