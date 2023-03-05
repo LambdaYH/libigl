@@ -43,7 +43,7 @@ namespace igl
           public:
             IGL_INLINE virtual void init(igl::opengl::glfw::Viewer *_viewer) override;
             IGL_INLINE void init_widgets();
-            IGL_INLINE virtual void reload_font(int font_size = 13);
+            IGL_INLINE virtual void reload_font(int font_size = 32);
             IGL_INLINE virtual void shutdown() override;
             IGL_INLINE virtual bool pre_draw() override;
             IGL_INLINE virtual bool post_draw() override;
