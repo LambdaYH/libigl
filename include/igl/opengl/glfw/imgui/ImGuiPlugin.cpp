@@ -16,7 +16,7 @@
 #include <imgui_freetype.h>
 #include <imgui_fonts_HonorSansCN_Regular.h>
 #include <imgui_fonts_seguiemj.h>
-#include <get_glyph_ranges_chinese_simplified_official.h>
+#include <get_glyph_ranges_chinese_official.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 
