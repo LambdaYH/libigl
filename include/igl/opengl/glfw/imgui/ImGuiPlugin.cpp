@@ -74,7 +74,7 @@ IGL_INLINE void ImGuiPlugin::reload_font(int font_size)
                                            HONORSansCN_Regular_compressed_size,
                                            font_size * hidpi_scaling_,
                                            nullptr,
-                                           ImFontAtlasGetGlyphRangesChineseSimplifiedOfficial());
+                                           GetGlyphRangesChineseSimplifiedOfficial());
   config_words.MergeMode = true;
   config_words.FontBuilderFlags |= ImGuiFreeTypeBuilderFlags_LoadColor;
   io.Fonts->AddFontFromMemoryCompressedTTF(seguiemj_compressed_data,seguiemj_compressed_size, font_size * hidpi_scaling_, &config_words, ranges);
