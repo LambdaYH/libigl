@@ -13,7 +13,10 @@
 #include <backends/imgui_impl_glfw.h>
 #include <backends/imgui_impl_opengl3.h>
 #include <imgui.h>
+#include <imgui_freetype.h>
 #include <imgui_fonts_HonorSansCN_Regular.h>
+#include <imgui_fonts_seguiemj.h>
+#include <get_glyph_ranges_chinese_simplified_official.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 
@@ -63,14 +66,18 @@ IGL_INLINE void ImGuiPlugin::reload_font(int font_size)
   ImGuiIO& io = ImGui::GetIO();
   // font config
   ImFontConfig config_words;
+  static ImWchar ranges[] = { 0x1, 0x1FFFF, 0 };
   config_words.OversampleV = 2;
   config_words.OversampleH = 2;
   io.Fonts->Clear();
   io.Fonts->AddFontFromMemoryCompressedTTF(HONORSansCN_Regular_compressed_data,
                                            HONORSansCN_Regular_compressed_size,
                                            font_size * hidpi_scaling_,
-                                           &config_words,
-                                           io.Fonts->GetGlyphRangesChineseFull());
+                                           nullptr,
+                                           ImFontAtlasGetGlyphRangesChineseSimplifiedOfficial());
+  config_words.MergeMode = true;
+  config_words.FontBuilderFlags |= ImGuiFreeTypeBuilderFlags_LoadColor;
+  io.Fonts->AddFontFromMemoryCompressedTTF(seguiemj_compressed_data,seguiemj_compressed_size, font_size * hidpi_scaling_, &config_words, ranges);
   io.FontGlobalScale = 1.0 / pixel_ratio_;
 }
 

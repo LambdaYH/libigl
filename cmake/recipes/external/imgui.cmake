@@ -7,8 +7,8 @@ message(STATUS "Third-party: creating target 'imgui::imgui'")
 include(FetchContent)
 FetchContent_Declare(
     imgui
-    GIT_REPOSITORY https://github.com/ocornut/imgui.git
-    GIT_TAG v1.85
+    GIT_REPOSITORY https://github.com/LambdaYH/imgui.git
+    GIT_TAG 4cf150c6d5c84950b12405686939c931ce27781a
 )
 FetchContent_MakeAvailable(imgui)
 
