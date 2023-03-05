@@ -13,7 +13,6 @@
 #include <backends/imgui_impl_glfw.h>
 #include <backends/imgui_impl_opengl3.h>
 #include <imgui.h>
-#include <imgui_fonts_droid_sans.h>
 #include <imgui_fonts_HonorSansCN_Regular.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -66,13 +65,9 @@ IGL_INLINE void ImGuiPlugin::reload_font(int font_size)
   ImFontConfig config_words;
   config_words.OversampleV = 2;
   config_words.OversampleH = 2;
-  //
   io.Fonts->Clear();
-  // io.Fonts->AddFontFromMemoryCompressedTTF(droid_sans_compressed_data,
-  //   droid_sans_compressed_size, font_size * hidpi_scaling_);
-  // chinese font
-  io.Fonts->AddFontFromMemoryCompressedTTF(HONORSansCN-Regular_compressed_data,
-                                           HONORSansCN-Regular_compressed_size,
+  io.Fonts->AddFontFromMemoryCompressedTTF(HONORSansCN_Regular_compressed_data,
+                                           HONORSansCN_Regular_compressed_size,
                                            font_size * hidpi_scaling_,
                                            &config_words,
                                            io.Fonts->GetGlyphRangesChineseFull());
