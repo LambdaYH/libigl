@@ -13,7 +13,7 @@
 #include <backends/imgui_impl_glfw.h>
 #include <backends/imgui_impl_opengl3.h>
 #include <imgui.h>
-#include <imgui_freetype.h>
+#include </misc/freetype/imgui_freetype.h>
 #include <imgui_fonts_HonorSansCN_Regular.h>
 #include <imgui_fonts_fontawesome6_solid.h>
 // #include <imgui_fonts_seguiemj.h>
