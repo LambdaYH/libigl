@@ -68,7 +68,8 @@ IGL_INLINE void ImGuiPlugin::reload_font(int font_size)
   ImGuiIO& io = ImGui::GetIO();
   // font config
   ImFontConfig config_words;
-  static ImWchar ranges[] = { 0x1, 0x1FFFF, 0 };
+  // static ImWchar ranges[] = { 0x1, 0x1FFFF, 0 };
+  static ImWchar ranges_icon[] = { ICON_MIN_FA, ICON_MAX_FA, 0 };
   config_words.OversampleV = 2;
   config_words.OversampleH = 2;
   io.Fonts->Clear();
