@@ -15,7 +15,9 @@
 #include <imgui.h>
 #include <imgui_freetype.h>
 #include <imgui_fonts_HonorSansCN_Regular.h>
-#include <imgui_fonts_seguiemj.h>
+#include <imgui_fonts_fontawesome6_solid.h>
+// #include <imgui_fonts_seguiemj.h>
+#include <igl/opengl/glfw/imgui/IconsFontAwesome6.h>
 #include <get_glyph_ranges_chinese_official.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -70,14 +72,15 @@ IGL_INLINE void ImGuiPlugin::reload_font(int font_size)
   config_words.OversampleV = 2;
   config_words.OversampleH = 2;
   io.Fonts->Clear();
+  config_words.FontBuilderFlags |= ImGuiFreeTypeBuilderFlags_LoadColor;
+  config_words.GlyphMinAdvanceX = 13.0f;
+  config_words.MergeMode = true;
   io.Fonts->AddFontFromMemoryCompressedTTF(HONORSansCN_Regular_compressed_data,
                                            HONORSansCN_Regular_compressed_size,
                                            font_size * hidpi_scaling_,
                                            nullptr,
                                            GetGlyphRangesChineseSimplifiedOfficial());
-  config_words.MergeMode = true;
-  config_words.FontBuilderFlags |= ImGuiFreeTypeBuilderFlags_LoadColor;
-  io.Fonts->AddFontFromMemoryCompressedTTF(seguiemj_compressed_data,seguiemj_compressed_size, font_size * hidpi_scaling_, &config_words, ranges);
+  io.Fonts->AddFontFromMemoryCompressedTTF(fontawesome6_solid_compressed_data, fontawesome6_solid_compressed_size, (font_size - 7) * hidpi_scaling_, &config_words, ranges_icon);
   io.FontGlobalScale = 1.0 / pixel_ratio_;
 }
 
